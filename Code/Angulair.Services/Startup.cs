@@ -22,12 +22,16 @@ namespace Angulair.Services
                     ctx.Request.Path);
                 return next();
             });
+            app.UseStaticFiles();
+            
             app.Run(ctx =>
             {
                 ctx.Response.ContentType = "text/plain";
                 return ctx.Response.WriteAsync("hello");
             });
-            
+
+            //Install-Package Microsoft.Owin.StaticFiles
+            app.UseStaticFiles();
         }
     }
 }
