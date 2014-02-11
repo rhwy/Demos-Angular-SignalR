@@ -23,7 +23,7 @@ namespace Angulair.Services
                 return next();
             });
             app.UseStaticFiles();
-            
+            app.MapSignalR();
             app.Run(ctx =>
             {
                 ctx.Response.ContentType = "text/plain";
