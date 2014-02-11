@@ -1,10 +1,68 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SPA with Angular, signalR, OWIN and Nancy DEMO ">
+    <meta name="author" content="">
+    <title>Angulair</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/cover.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
-    admin
+<body ng-app="adminapp">
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">Angulair Project</h3>
+                        <ul class="nav masthead-nav">
+                            <li><a href="/">Home</a></li>
+                            <li class="active"><a href="/admin"><span class="label label-info">Admin</span></a></liclass>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="inner cover" ng-controller="editQuestionController">
+                    
+                </div>
+
+                    <div class="mastfoot">
+                        <div class="inner">
+                            <p>(c) 2014 by @rhwy (Rui Carvalho)</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--<script type="text/ng-template" id="/editQuestion.html">
+            <div class="inner cover">
+                <div class="well">{{question}}</div>
+                <textarea class="form-control grey" rows="3" ng-model="question"></textarea>
+            </div>
+        </script>-->
+
+        <!-- Js
+        ================================================== -->
+
+        <script src="Scripts/jquery-1.9.1.min.js"></script>
+        <script src="Scripts/jquery.signalR-2.0.2.min.js"></script>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="/signalr/hubs"></script>
+        <script src="angular-signalr-service.js"></script>
+        <script src="admin.js"></script>
+   
 </body>
 </html>
+
