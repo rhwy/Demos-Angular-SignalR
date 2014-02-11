@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using Owin;
@@ -11,6 +12,16 @@ namespace Angulair.Services
     {
         public void Configuration(IAppBuilder app)
         {
+            app.Use((ctx, next) =>
+            {
+                var output = ctx.Get<TextWriter>("host.TraceOutput");
+                output.WriteLine(
+                    "{0} {1}: {2}",
+                    ctx.Request.Scheme,
+                    ctx.Request.Method,
+                    ctx.Request.Path);
+                return next();
+            });
             app.Run(ctx =>
             {
                 ctx.Response.ContentType = "text/plain";
