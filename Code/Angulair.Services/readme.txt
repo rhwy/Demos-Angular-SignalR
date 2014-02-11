@@ -1,5 +1,6 @@
 ﻿1.a01
 install-package Microsoft.AspNet.SignalR.SystemWeb
+install-package Microsoft.Owin.Cors
 #cinst owinhost
 owinhost
 
@@ -13,3 +14,6 @@ owinhost
 
 
 
+3.
+add first middleware
+a03
