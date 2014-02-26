@@ -115,7 +115,6 @@
     <Content Include="Content\cover.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="admin.html" />
-    <Content Include="index-step1.html" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
