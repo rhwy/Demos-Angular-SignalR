@@ -15,6 +15,7 @@ It shows:
 * dependency injection on signalR and NancyFX (with a simple in-memory implementation)
 * bits of Nancy framework for all api related stuff in a simple way
 * works from command line with OwinHost
+* 2 angular apps: the main with index.html and the admin part with admin.html. No routing setup here for simplicity.
 * cors with signalR : setup cors in startup.cs file, host the service online somewhere and try to access signalr/nancy services from a jsbin.com sandbox.
 
 for questions : demos@rui.fr, @rhwy
@@ -22,3 +23,8 @@ for questions : demos@rui.fr, @rhwy
 Notes:
 * there is more to come!
 * angulair directive will be available as a separate library with a lot more features
+
+* you can navigate through code history with the git tags:
+   * type `git checkout TagName` to access the code of a step
+   * from `step1` to `step12-final`
+   * not all the steps are fully functionnal!
