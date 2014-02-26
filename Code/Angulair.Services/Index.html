@@ -30,9 +30,30 @@
                 </div>
 
                 <div class="inner cover" ng-controller="questionController">
-                    
+                    <h1 class="cover-heading">{{question.content}}</h1>
+                    <p class="lead">
+                        (Click "yes" to vote up and "no" to vote against)
+                    </p>
+                    <p class="lead">
+                        <a href="#" class="btn btn-lg btn-success" ng-click="up()">Yes
+                            <span ng-show="question.voteUp">({{question.voteUp}})</span></a>
+                        <a href="#" class="btn btn-lg btn-danger" ng-click="down()">No <span ng-show="question.voteDown">({{question.voteDown}})</span></a>
+                    </p>
+                    <p class="lead" ng-show="results">
+                        Total votes : {{results.total()}}
+                    </p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': yes()+'%'}">
+                            <span class="sr-only">{{yes()}}% Yes</span>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': no()+'%'}">
+                            <span class="sr-only">{{no()}}% No</span>
+                        </div>
+                    </div>
                 </div>
-
+                
 
                 <div class="mastfoot">
                     <div class="inner">
@@ -55,8 +76,7 @@
     <script src="Scripts/angular-route.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="/signalr/hubs"></script>
+    <script src="angular-signalr-service.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
-
-

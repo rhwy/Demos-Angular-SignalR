@@ -1,6 +1,6 @@
 ﻿using Nancy;
 
-namespace Angulair.Services
+namespace Services
 {
     public class HomeModule : NancyModule
     {

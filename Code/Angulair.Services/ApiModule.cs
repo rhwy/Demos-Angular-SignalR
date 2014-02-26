@@ -2,55 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Hubs;
+using Microsoft.Owin.Security.Provider;
 using Nancy;
 using Nancy.ModelBinding;
 
-namespace Angulair.Services
+namespace Services
 {
-    [HubName("votes")]
-    public class VoteHub : Hub
-    {
-        private IQuestionRepository repo;
-
-        public VoteHub(IQuestionRepository repo)
-        {
-            this.repo = repo;
-        }
-
-        public void VoteUp(string id)
-        {
-            int current = repo.VoteUp(id);
-            Clients.All.updateQuestionVoteUp(id, current);
-        }
-
-        public void VoteDown(string id)
-        {
-            int current = repo.VoteDown(id);
-            Clients.All.updateQuestionVoteDown(id, current);
-        }
-
-
-    }
-
-
-    public class ChatHub : Hub
-    {
-
-        public void Send(string name, string message)
-        {
-            if (string.IsNullOrEmpty(name))
-            {
-                throw new HubException("sender name can't not be empty");
-            }
-            Clients.Others.broadcastMessage(name, message);
-            Clients.Caller.sent();
-        }
-    }
-
-
-
+    
     public class ApiModule : NancyModule
     {
         private readonly IQuestionRepository questions;
@@ -105,27 +65,4 @@ namespace Angulair.Services
             };
         }
     }
-
 }
-
-/* test it:
-GET /api/question
-POST /api/question
-setup content-type application/json + raw body:
-	{
-	    "id": "lovejs",
-	    "content": "Aimez-vous le javascript?",
-	    "voteUp": 0,
-	    "voteDown": 0
-	}
-	//then:
-	{
-    "id": "html5",
-    "content": "html5/Js c\u0027est mieux que silverlight?",
-    "voteUp": 0,
-    "voteDown": 0
-	}
-
-POST /api/question/default/up
-
-*/

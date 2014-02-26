@@ -23,16 +23,18 @@
                     <div class="inner">
                         <h3 class="masthead-brand">Angulair Project</h3>
                         <ul class="nav masthead-nav">
-                            <li><a href="/">Home</a></li>
-                            <li class="active"><a href="/admin"><span class="label label-info">Admin</span></a></liclass>
+                            <li ><a href="/">Home</a></li>
+                            <li class ="active"><a href="/admin"><span class="label label-info">Admin</span></a></li>
                         </ul>
                     </div>
                 </div>
-
+                
                 <div class="inner cover" ng-controller="editQuestionController">
+                    <edit-question question="question.content"></edit-question>
+                    <div >{{message}}</div>
+                    <div class="row">{{question | json}}</div>
+                    <button class="btn btn-info" ng-click="update()">Update</button>
                     
-                </div>
-
                     <div class="mastfoot">
                         <div class="inner">
                             <p>(c) 2014 by @rhwy (Rui Carvalho)</p>
@@ -41,28 +43,27 @@
 
                 </div>
 
-            </div>
-
         </div>
 
-        <!--<script type="text/ng-template" id="/editQuestion.html">
-            <div class="inner cover">
-                <div class="well">{{question}}</div>
-                <textarea class="form-control grey" rows="3" ng-model="question"></textarea>
-            </div>
-        </script>-->
+    </div>
+        
+    <script type="text/ng-template" id="/editQuestion.html">
+        <div class="inner cover">
+            <div class="well">{{question}}</div>
+            <textarea class="form-control grey" rows="3" ng-model="question"></textarea>
+        </div>
+    </script>
 
-        <!-- Js
-        ================================================== -->
+    <!-- Js
+    ================================================== -->
 
-        <script src="Scripts/jquery-1.9.1.min.js"></script>
-        <script src="Scripts/jquery.signalR-2.0.2.min.js"></script>
-        <script src="Scripts/angular.min.js"></script>
-        <script src="Scripts/bootstrap.min.js"></script>
-        <script src="/signalr/hubs"></script>
-        <script src="angular-signalr-service.js"></script>
-        <script src="admin.js"></script>
-   
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.0.2.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="angular-signalr-service.js"></script>
+    <script src="admin.js"></script></div>
 </body>
 </html>
 
